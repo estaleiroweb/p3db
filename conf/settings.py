@@ -118,18 +118,20 @@ class email:
         timeout = None
         """Maximum downtime"""
 
+
 class cookie:
     """Cookie settings"""
-    "name": "project"
-    "age": None
-    "domain": None
-    "path": "/"
-    "secure": False
-    "httponly": False
-    "samesite": None
+    name: str = "project"
+    age: int = None
+    domain = None
+    path: str = "/"
+    secure: bool = False
+    httponly: bool = False
+    samesite: str = None
+
 
 class web:
-    webserver:dict={
+    webserver: dict = {
         ":443": {
             "bind": "",
             "port": 443,
@@ -144,6 +146,7 @@ class web:
             "redirect": ":443"
         }
     }
+
     class log:
         """
         ```
@@ -153,15 +156,19 @@ class web:
         }
         ```
         """
-        error:dict= {}
-        info:dict= {}
-    class file_upload: {
-        "max_size": 2621440,
-        "temp_dir": None,
-        "permissions": 644,
-        "directory_permissions": 755
-    },
-    "tr_url": []
+        error: dict = {}
+        info: dict = {}
+
+    class file_upload:
+        {
+            "max_size": 2621440,
+            "temp_dir": None,
+            "permissions": 644,
+            "directory_permissions": 755
+        },
+
+
+tr_url: list = []
 
 """
 - `"tr_url":None`: Regular expression to translate URLs before check permition
